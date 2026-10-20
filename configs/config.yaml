@@ -1,0 +1,50 @@
+seed: 42
+data_root: data
+device: auto            # auto | cpu | cuda
+
+split:
+  cv_folds: 10          # stratified k-fold; fold i = test, fold i+1 = validation, rest = train
+  holdout_val_frac: 0.1 # used only for the final model that the explainers and the app use
+  holdout_test_frac: 0.2
+
+final:
+  num_seeds: 5          # final model = best of N seeds by validation loss
+
+train:
+  epochs: 300
+  batch_size: 32
+  lr: 0.005             # 0.01 was unstable on the 131-graph final split (see src/diagnose.py, results/diagnose.json)
+  drop_last: true       # skip the short last mini-batch: 131 = 4*32 + 3 graphs corrupted BatchNorm statistics
+  weight_decay: 5.0e-4
+  drop_node_p: 0.0      # augmentation: delete this fraction of atoms per molecule while training (see --drop-node)
+  min_epochs: 30       # warm-up: no checkpointing / early stopping before this epoch
+  patience: 50          # early stopping on validation loss (counted after warm-up)
+  lr_step: 50           # StepLR: lr *= lr_gamma every lr_step epochs
+  lr_gamma: 0.5
+
+# Architecture per model. GIN is the main model; the others are baselines.
+models:
+  gin:  {num_layers: 4, hidden: 64, dropout: 0.5, pooling: sum,  jk: true}
+  gine: {num_layers: 4, hidden: 64, dropout: 0.5, pooling: sum,  jk: true}   # ablation: uses bond types
+  gcn:  {num_layers: 4, hidden: 64, dropout: 0.5, pooling: mean, jk: true}
+  sage: {num_layers: 4, hidden: 64, dropout: 0.5, pooling: mean, jk: true}
+  gat:  {num_layers: 4, hidden: 64, dropout: 0.5, pooling: mean, jk: true, heads: 4}
+
+# SubgraphX settings (src/explain/). max_size = largest explanation in atoms; MUTAG molecules average ~18 atoms.
+explain:
+  rollouts: 20
+  max_size: 7
+  min_size: 3
+  shapley_samples: 50
+  c_puct: 10.0
+  expand_atoms: 8
+  gnn_epochs: 200
+
+# Grid for src/hpo.py (GIN only). Selection uses mean *validation* accuracy, not test accuracy.
+hpo:
+  folds: 5
+  epochs: 150
+  num_layers: [3, 4, 5]
+  hidden: [32, 64, 128]
+  dropout: [0.3, 0.5]
+  pooling: [sum, mean]

@@ -1,0 +1,632 @@
+{
+  "settings": {
+    "split": "test",
+    "limit": 5,
+    "rollouts": 20,
+    "max_size": 7,
+    "min_size": 3,
+    "samples": 50,
+    "expand": 8,
+    "gnn_epochs": 200
+  },
+  "summary": {
+    "n_graphs": 5,
+    "model_accuracy_on_these": 0.6,
+    "subgraphx": {
+      "fidelity_plus": {
+        "mean": 0.7626102197915315,
+        "std": 0.43210930702112027
+      },
+      "fidelity_minus": {
+        "mean": 0.7637155329808593,
+        "std": 0.4290574781928737
+      },
+      "sparsity": {
+        "mean": 0.7644015404884971,
+        "std": 0.0578190805370718
+      },
+      "connected_rate": 1.0
+    },
+    "gnnexplainer": {
+      "fidelity_plus": {
+        "mean": 0.7236212654221106,
+        "std": 0.4361593135069126
+      },
+      "fidelity_minus": {
+        "mean": 0.7676319601290743,
+        "std": 0.44849454119038723
+      },
+      "sparsity": {
+        "mean": 0.7644015404884971,
+        "std": 0.0578190805370718
+      },
+      "connected_rate": 0.0
+    },
+    "random": {
+      "fidelity_plus": {
+        "mean": 0.6479977416619659,
+        "std": 0.40285031486672357
+      },
+      "fidelity_minus": {
+        "mean": 0.7309047979209573,
+        "std": 0.404083143948751
+      },
+      "sparsity": {
+        "mean": 0.7644015404884971,
+        "std": 0.05781908053707178
+      },
+      "connected_rate": 1.0
+    },
+    "nitro_check": {
+      "n_molecules": 3,
+      "subgraphx": 0.0,
+      "gnnexplainer": 0.0,
+      "random": 0.39999999999999997
+    },
+    "nitro_rate_by_true_label": {
+      "0": 1.0,
+      "1": 1.0
+    }
+  },
+  "graphs": [
+    {
+      "idx": 160,
+      "label": 1,
+      "pred": 1,
+      "prob_pred": 1.0,
+      "num_atoms": 26,
+      "has_nitro": true,
+      "subgraphx": {
+        "nodes": [
+          6,
+          10,
+          11,
+          12,
+          16,
+          17,
+          19
+        ],
+        "score": 0.29364096676857687,
+        "target": 1,
+        "num_atoms": 26,
+        "prob_full": 1.0,
+        "prob_keep": 0.006122383289039135,
+        "prob_remove": 0.0051301936618983746,
+        "fidelity_plus": 0.9948698063381016,
+        "fidelity_minus": 0.9938776167109609,
+        "sparsity": 0.7307692307692308,
+        "candidates": [
+          [
+            0.29364096676857687,
+            [
+              6,
+              10,
+              11,
+              12,
+              16,
+              17,
+              19
+            ]
+          ],
+          [
+            0.29001336892207746,
+            [
+              11,
+              12,
+              13,
+              14,
+              20
+            ]
+          ],
+          [
+            0.2785568441728719,
+            [
+              6,
+              10,
+              11,
+              16,
+              17,
+              18,
+              19
+            ]
+          ],
+          [
+            0.2717435976667457,
+            [
+              3,
+              4,
+              6,
+              11,
+              12,
+              13
+            ]
+          ],
+          [
+            0.2674151857884192,
+            [
+              3,
+              6,
+              10,
+              11,
+              12,
+              13
+            ]
+          ]
+        ],
+        "n_forward": 81809,
+        "n_shapley": 2037,
+        "seconds": 3.8301949501037598,
+        "connected": true,
+        "covers_nitro": false
+      },
+      "gnnexplainer": {
+        "prob_full": 1.0,
+        "prob_keep": 8.128459012368694e-05,
+        "prob_remove": 3.680143265683e-07,
+        "fidelity_plus": 0.9999996319856734,
+        "fidelity_minus": 0.9999187154098763,
+        "sparsity": 0.7307692307692308,
+        "nodes": [
+          3,
+          5,
+          6,
+          9,
+          14,
+          19,
+          23
+        ],
+        "connected": false,
+        "covers_nitro": false
+      },
+      "random": {
+        "fidelity_plus": 0.8846058804541826,
+        "fidelity_minus": 0.9621153144165874,
+        "sparsity": 0.7307692307692308,
+        "connected": true,
+        "covers_nitro": 0.6
+      }
+    },
+    {
+      "idx": 62,
+      "label": 1,
+      "pred": 0,
+      "prob_pred": 0.8689122200012207,
+      "num_atoms": 23,
+      "has_nitro": true,
+      "subgraphx": {
+        "nodes": [
+          9,
+          10,
+          11,
+          12
+        ],
+        "score": 0.06915074229240417,
+        "target": 0,
+        "num_atoms": 23,
+        "prob_full": 0.8689121007919312,
+        "prob_keep": 0.9627997875213623,
+        "prob_remove": 0.9700015187263489,
+        "fidelity_plus": -0.10108941793441772,
+        "fidelity_minus": -0.09388768672943115,
+        "sparsity": 0.8260869565217391,
+        "candidates": [
+          [
+            0.06915074229240417,
+            [
+              9,
+              10,
+              11,
+              12
+            ]
+          ],
+          [
+            0.0676511299610138,
+            [
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ]
+          ],
+          [
+            0.05659667015075684,
+            [
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ]
+          ],
+          [
+            0.056245309114456174,
+            [
+              12,
+              14,
+              15,
+              16
+            ]
+          ],
+          [
+            0.05596089482307434,
+            [
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ]
+          ]
+        ],
+        "n_forward": 21903,
+        "n_shapley": 535,
+        "seconds": 0.9692196846008301,
+        "connected": true,
+        "covers_nitro": false
+      },
+      "gnnexplainer": {
+        "prob_full": 0.8689121007919312,
+        "prob_keep": 0.9979698061943054,
+        "prob_remove": 0.9999881982803345,
+        "fidelity_plus": -0.13107609748840332,
+        "fidelity_minus": -0.12905770540237427,
+        "sparsity": 0.8260869565217391,
+        "nodes": [
+          2,
+          4,
+          12,
+          15
+        ],
+        "connected": false,
+        "covers_nitro": false
+      },
+      "random": {
+        "fidelity_plus": -0.11981288194656373,
+        "fidelity_minus": -0.07370835542678833,
+        "sparsity": 0.826086956521739,
+        "connected": true,
+        "covers_nitro": 0.0
+      }
+    },
+    {
+      "idx": 48,
+      "label": 1,
+      "pred": 1,
+      "prob_pred": 0.999934196472168,
+      "num_atoms": 20,
+      "has_nitro": true,
+      "subgraphx": {
+        "nodes": [
+          10,
+          11,
+          12,
+          13,
+          17
+        ],
+        "score": 0.22431234208630485,
+        "target": 1,
+        "num_atoms": 20,
+        "prob_full": 0.999934196472168,
+        "prob_keep": 0.011616569012403488,
+        "prob_remove": 0.0047377110458910465,
+        "fidelity_plus": 0.9951964854262769,
+        "fidelity_minus": 0.9883176274597645,
+        "sparsity": 0.75,
+        "candidates": [
+          [
+            0.22431234208630485,
+            [
+              10,
+              11,
+              12,
+              13,
+              17
+            ]
+          ],
+          [
+            0.18723664690511213,
+            [
+              13,
+              14,
+              15,
+              16
+            ]
+          ],
+          [
+            0.18255409342047643,
+            [
+              2,
+              3,
+              9,
+              10,
+              14,
+              15,
+              16
+            ]
+          ],
+          [
+            0.173995328318706,
+            [
+              2,
+              10,
+              11,
+              15,
+              16
+            ]
+          ],
+          [
+            0.17241343367237277,
+            [
+              10,
+              13,
+              14,
+              15
+            ]
+          ]
+        ],
+        "n_forward": 24501,
+        "n_shapley": 1013,
+        "seconds": 1.6053218841552734,
+        "connected": true,
+        "covers_nitro": false
+      },
+      "gnnexplainer": {
+        "prob_full": 0.999934196472168,
+        "prob_keep": 0.00157846265938133,
+        "prob_remove": 0.01944665238261223,
+        "fidelity_plus": 0.9804875440895557,
+        "fidelity_minus": 0.9983557338127866,
+        "sparsity": 0.75,
+        "nodes": [
+          0,
+          7,
+          8,
+          18,
+          19
+        ],
+        "connected": false,
+        "covers_nitro": false
+      },
+      "random": {
+        "fidelity_plus": 0.920872694440186,
+        "fidelity_minus": 0.9159645557403564,
+        "sparsity": 0.75,
+        "connected": true,
+        "covers_nitro": 0.6
+      }
+    },
+    {
+      "idx": 173,
+      "label": 1,
+      "pred": 1,
+      "prob_pred": 1.0,
+      "num_atoms": 22,
+      "has_nitro": true,
+      "subgraphx": {
+        "nodes": [
+          10,
+          11,
+          12,
+          13,
+          14,
+          16,
+          17
+        ],
+        "score": 0.27505694310879336,
+        "target": 1,
+        "num_atoms": 22,
+        "prob_full": 1.0,
+        "prob_keep": 0.02058238349854946,
+        "prob_remove": 0.03395388275384903,
+        "fidelity_plus": 0.966046117246151,
+        "fidelity_minus": 0.9794176165014505,
+        "sparsity": 0.6818181818181819,
+        "candidates": [
+          [
+            0.27505694310879336,
+            [
+              10,
+              11,
+              12,
+              13,
+              14,
+              16,
+              17
+            ]
+          ],
+          [
+            0.27201877731175045,
+            [
+              6,
+              7,
+              8,
+              10,
+              11,
+              14,
+              15
+            ]
+          ],
+          [
+            0.27012021962547805,
+            [
+              7,
+              8,
+              10,
+              11,
+              14,
+              15
+            ]
+          ],
+          [
+            0.26641328930215424,
+            [
+              2,
+              6,
+              7,
+              8,
+              10,
+              11
+            ]
+          ],
+          [
+            0.2637839880510364,
+            [
+              6,
+              7,
+              10,
+              11,
+              14,
+              15
+            ]
+          ]
+        ],
+        "n_forward": 43404,
+        "n_shapley": 1451,
+        "seconds": 2.5900778770446777,
+        "connected": true,
+        "covers_nitro": false
+      },
+      "gnnexplainer": {
+        "prob_full": 1.0,
+        "prob_keep": 0.0004450709675438702,
+        "prob_remove": 0.0002488659229129553,
+        "fidelity_plus": 0.999751134077087,
+        "fidelity_minus": 0.9995549290324561,
+        "sparsity": 0.6818181818181819,
+        "nodes": [
+          1,
+          8,
+          9,
+          10,
+          11,
+          14,
+          19
+        ],
+        "connected": false,
+        "covers_nitro": false
+      },
+      "random": {
+        "fidelity_plus": 0.9475992076098919,
+        "fidelity_minus": 0.9794043923262507,
+        "sparsity": 0.6818181818181819,
+        "connected": true,
+        "covers_nitro": 0.0
+      }
+    },
+    {
+      "idx": 109,
+      "label": 0,
+      "pred": 1,
+      "prob_pred": 0.9755104184150696,
+      "num_atoms": 24,
+      "has_nitro": true,
+      "subgraphx": {
+        "nodes": [
+          12,
+          13,
+          14,
+          18
+        ],
+        "score": 0.18793466676557727,
+        "target": 1,
+        "num_atoms": 24,
+        "prob_full": 0.9755104184150696,
+        "prob_keep": 0.024657927453517914,
+        "prob_remove": 0.01748231053352356,
+        "fidelity_plus": 0.958028107881546,
+        "fidelity_minus": 0.9508524909615517,
+        "sparsity": 0.8333333333333334,
+        "candidates": [
+          [
+            0.18793466676557727,
+            [
+              12,
+              13,
+              14,
+              18
+            ]
+          ],
+          [
+            0.17416408810044232,
+            [
+              3,
+              9,
+              11,
+              12,
+              13,
+              14,
+              18
+            ]
+          ],
+          [
+            0.16971185040762976,
+            [
+              3,
+              9,
+              10,
+              11,
+              12,
+              14,
+              18
+            ]
+          ],
+          [
+            0.15758820734321488,
+            [
+              0,
+              3,
+              4,
+              5,
+              6
+            ]
+          ],
+          [
+            0.1543586922216491,
+            [
+              2,
+              3,
+              9,
+              10,
+              12,
+              13,
+              14
+            ]
+          ]
+        ],
+        "n_forward": 54842,
+        "n_shapley": 1672,
+        "seconds": 2.7654521465301514,
+        "connected": true,
+        "covers_nitro": false
+      },
+      "gnnexplainer": {
+        "prob_full": 0.9755104184150696,
+        "prob_keep": 0.006122290622442961,
+        "prob_remove": 0.20656630396842957,
+        "fidelity_plus": 0.76894411444664,
+        "fidelity_minus": 0.9693881277926266,
+        "sparsity": 0.8333333333333334,
+        "nodes": [
+          8,
+          16,
+          17,
+          23
+        ],
+        "connected": false,
+        "covers_nitro": false
+      },
+      "random": {
+        "fidelity_plus": 0.6067238077521324,
+        "fidelity_minus": 0.8707480825483799,
+        "sparsity": 0.8333333333333334,
+        "connected": true,
+        "covers_nitro": 0.4
+      }
+    }
+  ]
+}

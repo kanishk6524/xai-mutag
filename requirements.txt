@@ -1,0 +1,13 @@
+# Minimum versions. See requirements-lock.txt for the exact versions the results were produced with.
+torch>=2.2
+torch-geometric>=2.5
+numpy>=1.26
+scipy>=1.11
+pandas>=2.0
+scikit-learn>=1.4
+matplotlib>=3.8
+networkx>=3.2
+pyyaml>=6.0
+streamlit>=1.50      # Stage 6 (the app uses width="stretch")
+plotly>=5.20         # Stage 6
+pytest>=8.0          # Stage 7

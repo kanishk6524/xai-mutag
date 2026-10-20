@@ -1,0 +1,72 @@
+[
+  {
+    "variant": "A baseline",
+    "override": {},
+    "holdout": {
+      "test_acc": 0.6789473684210526,
+      "val_acc": 0.7157894736842105,
+      "train_fit": 0.7450381679389313,
+      "n_underfit": 3
+    },
+    "cv_acc_mean": 0.8666666666666668,
+    "cv_acc_std": 0.05022435217212604
+  },
+  {
+    "variant": "B drop_last",
+    "override": {
+      "drop_last": true
+    },
+    "holdout": {
+      "test_acc": 0.8210526315789475,
+      "val_acc": 0.9263157894736841,
+      "train_fit": 0.9374045801526718,
+      "n_underfit": 0
+    },
+    "cv_acc_mean": 0.8400584795321636,
+    "cv_acc_std": 0.04854241507539782
+  },
+  {
+    "variant": "C drop_last+lr.005",
+    "override": {
+      "drop_last": true,
+      "lr": 0.005
+    },
+    "holdout": {
+      "test_acc": 0.8210526315789475,
+      "val_acc": 0.9473684210526315,
+      "train_fit": 0.9389312977099238,
+      "n_underfit": 0
+    },
+    "cv_acc_mean": 0.8558479532163743,
+    "cv_acc_std": 0.08295079944616306
+  },
+  {
+    "variant": "D drop_last+clip1",
+    "override": {
+      "drop_last": true,
+      "grad_clip": 1.0
+    },
+    "holdout": {
+      "test_acc": 0.8105263157894737,
+      "val_acc": 0.9263157894736842,
+      "train_fit": 0.9450381679389313,
+      "n_underfit": 0
+    },
+    "cv_acc_mean": 0.8350877192982458,
+    "cv_acc_std": 0.05022435217212603
+  },
+  {
+    "variant": "E lr.001",
+    "override": {
+      "lr": 0.001
+    },
+    "holdout": {
+      "test_acc": 0.7947368421052632,
+      "val_acc": 0.8736842105263157,
+      "train_fit": 0.8870229007633588,
+      "n_underfit": 0
+    },
+    "cv_acc_mean": 0.86140350877193,
+    "cv_acc_std": 0.0724320412655518
+  }
+]
